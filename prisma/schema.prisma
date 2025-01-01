@@ -18,7 +18,7 @@ datasource db {
 
 model User {
   id Int
-}
+} 
 
 
 model Bookmark {}
