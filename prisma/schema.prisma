@@ -13,12 +13,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 // Entites
 
 model User {
-  id Int
-} 
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
+  email String
+  hash  String
 
-model Bookmark {}
+  firstName String?
+  lastName  String?
+}
+
+model Bookmark {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String?
+  link        String
+}
